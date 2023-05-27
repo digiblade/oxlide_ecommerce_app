@@ -1,3 +1,5 @@
+import 'package:crmecommerce/View/Organisms/CategoryGrid/o_categoryGrid.dart';
+
 import '../../../Utils/Const/colors.dart';
 import '../../Organisms/Search/o_search.dart';
 import 'package:flutter/material.dart';
@@ -67,6 +69,7 @@ class _P_HomePageState extends State<P_HomePage> {
           child: Column(
             children: const [
               O_SearchBar(),
+              O_CategoryGrid(),
             ],
           ),
         ),
