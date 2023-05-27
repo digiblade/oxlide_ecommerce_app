@@ -1,5 +1,8 @@
-import 'package:crmecommerce/View/Page/Login/p_login.dart';
-import 'package:crmecommerce/View/Page/Preview/p_preview.dart';
+import './View/Page/Application/p_homepage.dart';
+import './View/Page/Login/P_register.dart';
+import './View/Page/Login/p_forgetPasswordPage.dart';
+import './View/Page/Login/p_login.dart';
+import './View/Page/Preview/p_preview.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,6 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'E-commerce',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
         fontFamily: "primary-font",
@@ -20,19 +24,16 @@ class MyApp extends StatelessWidget {
       onGenerateRoute: (RouteSettings settings) {
         var routes = <String, WidgetBuilder>{
           "/loginPage": (context) => const LoginPage(),
-
-          // "/responseSuccessPage": (context) => OrderResponsePage(
-          //       type: "success",
-          //     ),
-
-          // "/categoryPage": (context) =>
-          //     CategoryProductPage(cat: settings.arguments as CategoryModel),
+          "/registerPage": (context) => const RegisterPage(),
+          "/forgetPasswordPage": (context) => const ForgetPasswordPage(),
+          "/homePage": (context) => const P_HomePage(),
         };
         WidgetBuilder? builder = routes[settings.name!];
 
         return MaterialPageRoute(
-            builder: (ctx) =>
-                builder != null ? builder(ctx) : const NotFoundPage());
+          builder: (ctx) =>
+              builder != null ? builder(ctx) : const NotFoundPage(),
+        );
       },
       // routes: {
       //   "/productPage": (context) => const ProductPage(),

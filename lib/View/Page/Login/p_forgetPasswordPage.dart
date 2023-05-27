@@ -2,14 +2,14 @@ import 'package:crmecommerce/Utils/Const/colors.dart';
 import 'package:crmecommerce/View/Atoms/Component/Input/a_inputfield.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class ForgetPasswordPage extends StatefulWidget {
+  const ForgetPasswordPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<ForgetPasswordPage> createState() => _ForgetPasswordPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,15 +33,11 @@ class _LoginPageState extends State<LoginPage> {
                         'assets/images/logo/templogo.png',
                       ),
                       const Text(
-                        "Welcome Back",
+                        "Forget Password",
                         style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
                         ),
-                      ),
-                      const Text(
-                        "Login to your account",
-                        style: TextStyle(color: light),
                       ),
                       const SizedBox(
                         height: 20,
@@ -54,22 +50,12 @@ class _LoginPageState extends State<LoginPage> {
                           label: "Email address",
                         ),
                       ),
-                      const Padding(
-                        padding: EdgeInsets.symmetric(
-                          vertical: 12,
-                        ),
-                        child: InputField(
-                          label: "Password",
-                        ),
-                      ),
                       Align(
                         alignment: Alignment.centerRight,
                         child: TextButton(
-                          onPressed: () {
-                            Navigator.pushNamed(context, '/forgetPasswordPage');
-                          },
+                          onPressed: () {},
                           child: const Text(
-                            "Forget Password?",
+                            "Get OTP",
                             style: TextStyle(
                               color: primary,
                               fontWeight: FontWeight.bold,
@@ -77,19 +63,32 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                       ),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(
+                          vertical: 12,
+                        ),
+                        child: InputField(
+                          label: "OTP",
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(
+                          vertical: 12,
+                        ),
+                        child: InputField(
+                          label: "New Password",
+                        ),
+                      ),
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.pushNamedAndRemoveUntil(
-                                context, '/homePage', (route) => false);
-                          },
+                          onPressed: () {},
                           style: ButtonStyle(
                             backgroundColor:
                                 MaterialStateProperty.all<Color>(primary),
                           ),
                           child: const Text(
-                            "Login",
+                            "Reset Password",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                             ),
@@ -103,7 +102,7 @@ class _LoginPageState extends State<LoginPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text(
-                      "Don't have an account?",
+                      "Already have an account?",
                       style: TextStyle(
                         color: light,
                         fontWeight: FontWeight.bold,
@@ -111,10 +110,10 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     TextButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/registerPage');
+                        Navigator.popAndPushNamed(context, "/loginPage");
                       },
                       child: const Text(
-                        "Sign up",
+                        "Sign in",
                         style: TextStyle(
                           color: primary,
                           fontWeight: FontWeight.bold,
