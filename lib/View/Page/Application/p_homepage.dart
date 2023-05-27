@@ -1,4 +1,5 @@
 import 'package:crmecommerce/View/Organisms/CategoryGrid/o_categoryGrid.dart';
+import 'package:crmecommerce/View/Organisms/Sections/Products/o_productSection.dart';
 
 import '../../../Utils/Const/colors.dart';
 import '../../Organisms/Search/o_search.dart';
@@ -14,6 +15,19 @@ class P_HomePage extends StatefulWidget {
 
 // ignore: camel_case_types
 class _P_HomePageState extends State<P_HomePage> {
+  List<Widget> elements = [
+    const O_SearchBar(),
+    const O_CategoryGrid(),
+    O_ProductSection(
+      title: "New Arrivals",
+    ),
+    O_ProductSection(
+      title: "Hot Deals",
+    ),
+    O_ProductSection(
+      title: "Trendy Offers",
+    ),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,11 +80,18 @@ class _P_HomePageState extends State<P_HomePage> {
       ),
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Column(
-            children: const [
-              O_SearchBar(),
-              O_CategoryGrid(),
-            ],
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 16),
+            child: Column(
+              children: elements
+                  .map(
+                    (component) => Padding(
+                      padding: const EdgeInsets.only(bottom: 16),
+                      child: component,
+                    ),
+                  )
+                  .toList(),
+            ),
           ),
         ),
       ),
