@@ -1,8 +1,8 @@
-import 'package:crmecommerce/View/Page/Application/p_homepage.dart';
-import 'package:crmecommerce/View/Page/Login/P_register.dart';
-import 'package:crmecommerce/View/Page/Login/p_forgetPasswordPage.dart';
-import 'package:crmecommerce/View/Page/Login/p_login.dart';
-import 'package:crmecommerce/View/Page/Preview/p_preview.dart';
+import './View/Page/Application/p_homepage.dart';
+import './View/Page/Login/P_register.dart';
+import './View/Page/Login/p_forgetPasswordPage.dart';
+import './View/Page/Login/p_login.dart';
+import './View/Page/Preview/p_preview.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'E-commerce',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
         fontFamily: "primary-font",

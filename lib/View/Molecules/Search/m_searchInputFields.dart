@@ -13,21 +13,48 @@ class M_SearchInputFields extends StatefulWidget {
 class _M_SearchInputFieldsState extends State<M_SearchInputFields> {
   @override
   Widget build(BuildContext context) {
-    return const TextField(
-      decoration: InputDecoration(
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(12),
+    return const Material(
+      elevation: 4,
+      shadowColor: light,
+      borderRadius: BorderRadius.all(
+        Radius.circular(20),
+      ),
+      child: TextField(
+        cursorColor: light,
+        style: TextStyle(color: light, fontWeight: FontWeight.bold),
+        decoration: InputDecoration(
+          contentPadding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+          hintText: "Search \"grocery\"",
+          hintStyle: TextStyle(color: light),
+          prefixIcon: Icon(
+            Icons.search,
+            color: light,
           ),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: light, width: 0.5),
-        ),
-        enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: light, width: 0.5),
-        ),
-        labelStyle: TextStyle(
-          color: light,
+          prefixIconColor: light,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(20),
+            ),
+            borderSide: BorderSide(
+              color: Colors.white,
+              width: 0.5,
+            ),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.transparent,
+              width: 0.5,
+            ),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.transparent,
+              width: 0.5,
+            ),
+          ),
+          labelStyle: TextStyle(
+            color: light,
+          ),
         ),
       ),
     );

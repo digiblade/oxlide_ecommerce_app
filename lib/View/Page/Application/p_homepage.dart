@@ -1,5 +1,5 @@
-import 'package:crmecommerce/Utils/Const/colors.dart';
-import 'package:crmecommerce/View/Organisms/Search/o_search.dart';
+import '../../../Utils/Const/colors.dart';
+import '../../Organisms/Search/o_search.dart';
 import 'package:flutter/material.dart';
 
 // ignore: camel_case_types

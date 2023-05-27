@@ -13,9 +13,15 @@ class O_SearchBar extends StatefulWidget {
 class _O_SearchBarState extends State<O_SearchBar> {
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: MediaQuery.of(context).size.width / 2,
-      child: const M_SearchInputFields(),
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: SizedBox(
+          height: 40,
+          width: MediaQuery.of(context).size.width * 0.8,
+          child: const M_SearchInputFields(),
+        ),
+      ),
     );
   }
 }
