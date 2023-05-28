@@ -31,13 +31,14 @@ class _O_ProductSectionState extends State<O_ProductSection> {
         ),
         GridView.builder(
           itemCount: 6,
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            childAspectRatio: 0.7,
+            childAspectRatio: MediaQuery.of(context).size.height /
+                MediaQuery.of(context).size.width,
           ),
           shrinkWrap: true,
           primary: false,
-          itemBuilder: ((context, index) => M_ImageCardWithContent()),
+          itemBuilder: ((context, index) => const M_ImageCardWithContent()),
         ),
       ],
     );

@@ -1,3 +1,5 @@
+import 'package:crmecommerce/Utils/Const/CommonHelpers/CommonHelpers.dart';
+
 import './View/Page/Application/p_homepage.dart';
 import './View/Page/Login/P_register.dart';
 import './View/Page/Login/p_forgetPasswordPage.dart';
@@ -30,10 +32,7 @@ class MyApp extends StatelessWidget {
         };
         WidgetBuilder? builder = routes[settings.name!];
 
-        return MaterialPageRoute(
-          builder: (ctx) =>
-              builder != null ? builder(ctx) : const NotFoundPage(),
-        );
+        return goToRoutesWithTransition(settings, builder);
       },
       // routes: {
       //   "/productPage": (context) => const ProductPage(),

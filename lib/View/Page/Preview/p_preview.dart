@@ -47,7 +47,7 @@ class _PreviewPageState extends State<PreviewPage> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: SizedBox(
-                width: double.infinity,
+                width: 60,
                 child: Image.asset('assets/images/preview.png'),
               ),
             ),
